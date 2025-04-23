@@ -16,7 +16,7 @@ const products: Product[] = [
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 sm:px-0 py-8 font-sans flex flex-col min-h-screen">
+    <div className="container mx-auto px-4 sm:px-0 pt-8 pb-0 font-sans flex flex-col min-h-screen">
       <div className="flex-grow">
         <header className="max-w-6xl mx-auto px-4 sm:px-0 flex justify-center items-center mb-12 pb-4 border-b" style={{ marginTop: '-12px' }}>
           <Link href="/">
