@@ -1,17 +1,20 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import { ArrowUpRight, Instagram, Github } from 'lucide-react'; 
+
+import tekirBanner from '../public/banners/tekir.png';
+import karakulakBanner from '../public/banners/karakulak.png';
 
 interface Product {
   name: string;
   description: string;
   link?: string; 
-  image?: string; 
+  image?: StaticImageData; 
 }
 
 const products: Product[] = [
-  { name: 'Tekir', description: 'Your intelligent and fast search engine.', link: 'https://tekir.co', image: '/banners/tekir.png' },
-  { name: 'Karakulak', description: 'The private way to talk with AI, free for all.', link: 'https://chat.tekir.co', image: '/banners/karakulak.png' }, 
+  { name: 'Tekir', description: 'Your intelligent and fast search engine.', link: 'https://tekir.co', image: tekirBanner },
+  { name: 'Karakulak', description: 'The private way to talk with AI, free for all.', link: 'https://chat.tekir.co', image: karakulakBanner }, 
 ];
 
 export default function Home() {
@@ -26,6 +29,7 @@ export default function Home() {
               width={234}
               height={35}
               className="h-8 w-auto" 
+              priority
             />
           </Link>
           <Image
@@ -35,11 +39,12 @@ export default function Home() {
             height={32}
             className="ml-2"
             style={{ position: 'relative', top: '-1px' }}
+            priority
           />
         </header>
 
         <main className="max-w-6xl mx-auto px-4 sm:px-0 flex flex-col items-center text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-serif mb-6 leading-tight"> 
+          <h1 className="text-5xl md:text-6xl font-serif mb-6 leading-tight header-appear"> 
             We are <em className="font-italic">building</em>
             <em className="font-italic"> the web</em> <br/>
             as an open place.
@@ -68,6 +73,8 @@ export default function Home() {
                     width={400} 
                     height={150} 
                     className="w-full h-auto object-cover"
+                    placeholder="blur"
+                    priority
                   />
                   <div className="absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-white to-transparent"></div>
                 </div>
